@@ -1,0 +1,318 @@
+.main-conatiner {
+    border-color: black;
+    margin-top: 0%;
+    width: 90%;
+    height: 50%;
+    margin-left: 8%;
+    border: slategrey 1px;
+    justify-content: center;
+}
+
+.form-conatiner {
+    // border: 1px solid gray;
+    margin: 20px;
+    padding: 10px;
+    border-color: black;
+    width: 55%;
+    margin-left: 14%;
+    // border:  1px #555;
+    border: slategrey 1px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.6);
+    height: auto;
+}
+
+.row {
+    margin: 20px;
+    //padding: 10px;
+    border-color: black;
+    width: 55%;
+    margin-left: 14%;
+    // border:  1px #555;
+    border: slategrey 1px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.6);
+    height: auto;
+}
+
+.row2 {
+    //margin: 20px;
+    //padding: 10px;
+    border-color: black;
+    width: 55%;
+    margin-left: 14%;
+    // border:  1px #555;
+    border: slategrey 1px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.6);
+    height: auto;
+}
+
+.card2 {
+    height: auto;
+    width: 240px;
+    // background-color: pink;
+    align-items: center;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+    align-content: center;
+}
+
+.column1 {
+    float: left;
+    width: 35%;
+    padding: 0px;
+    // height: auto; /* Should be removed. Only for demonstration */
+}
+
+.row1:after {
+    content: "";
+    display: table;
+    clear: both;
+    border: 1px solid gray;
+    height: auto;
+    width: 55%;
+    border: slategrey 1px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.6);
+    margin-left: 14%;
+}
+
+form {
+    width: 40rem;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.name-contact {
+    width: 80%;
+    margin-left: 0%;
+    flex-direction: row;
+    justify-content: space-around;
+    //justify-content: space-between;
+}
+
+.address {
+    width: 76%;
+    height: 82px;
+    //display: flex;
+    // flex-direction: row;
+    //justify-content: space-around;
+    margin-left: 2%;
+    // margin-right: 13px;
+    //height: 100px;
+}
+
+#address {
+    width: 612px;
+    height: 82px;
+    ;
+}
+
+.mat-input-element {
+    display: flex;
+    height: 40px;
+}
+
+.example-section {
+    display: flex;
+    text-align: left;
+    // align-content: center;
+    align-items: center;
+    // float: left;
+    height: auto;
+    width: 90%;
+    margin-left: 11%;
+}
+
+.example-margin {
+    display: flex;
+    // align-content: center;
+    text-align: left;
+    // float: left;
+    flex-direction: row;
+    padding-left: -1em;
+    justify-content: space-around;
+}
+
+.card {
+    display: flex;
+    height: auto;
+    width: 240px;
+    background-color: white;
+    align-items: center;
+    //box-shadow: 0 0 1px rgba(0,0,0,0.6);
+    align-content: center;
+}
+
+.card1 {
+    height: auto;
+    display: flex;
+    width: 240px;
+    background-color: white;
+    align-items: center;
+    //box-shadow: 0 0 1px rgba(0,0,0,0.6);
+    align-content: center;
+}
+
+.row1:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.details {
+    // background-color: rgba(224, 34, 34, 0.829);
+    display: flex;
+    width: 100%;
+    height: 50%;
+    margin-left: 1em;
+    margin-top: 0em;
+}
+
+.details1 {
+    // background-color: rgba(224, 34, 34, 0.829);
+    display: flex;
+    width: 100%;
+    height: 50%;
+    margin-left: 1em;
+    margin-top: 0em;
+}
+
+.bookimage {
+    height: 60%;
+    width: 40%;
+    margin-left: 13%;
+    align-content: center;
+    box-shadow: 0 1 0 7px rgba(0, 0, 0, 0.6);
+}
+
+.author {
+    float: center;
+    margin-left: -4em;
+    font-size: 10px;
+    color: slategrey;
+    padding-top: 10px
+}
+
+.bookname {
+    margin-left: 10%;
+    padding-top: 0em;
+    font-size: 14px;
+    font-style: bold;
+}
+
+.price {
+    margin-left: -2.3em;
+    padding-top: 34PX;
+    font-size: 17px;
+}
+
+.author1 {
+    float: center;
+    margin-left: -3em;
+    font-size: 10px;
+    color: slategrey;
+    padding-top: 10px
+}
+
+.bookname1 {
+    margin-left: 10%;
+    padding-top: 0em;
+    font-size: 14px;
+    font-style: bold;
+}
+
+.price1 {
+    margin-left: -4.34em;
+    padding-top: 20PX;
+    font-size: 15px;
+}
+
+.buttons {
+    background-color: transparent;
+    width: 100%;
+}
+
+.button3 {
+    display: flexbox;
+    margin-left: 90%;
+    font-size: 14px;
+    width: 151px;
+    height: 35px;
+    background-color: #3371B5;
+    border-color: #3371B5;
+    color: white;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.button2 {
+    margin-left: 0%;
+    display: flexbox;
+    //float: right;
+    border-radius: 2px;
+    opacity: 1;
+    margin-bottom: 7%;
+    font-size: 14px;
+    width: 151px;
+    margin-top: 100px;
+    height: 35px;
+    background-color: #3371B5;
+    border-color: #3371B5;
+    color: white;
+}
+
+.dobutton {
+    display: flex;
+    justify-content: right;
+    // display: flexbox;
+    //float: right;
+    //margin-bottom: 3%;
+    //margin-right: 5.6em;
+}
+
+.bottom {
+    background-color: #2E1D1E;
+    padding: 9px;
+    font-family: Lato;
+    margin-left: -126px;
+    padding-left: 117px;
+    color: white;
+    bottom: 0px;
+    width: 111%;
+    margin-top: 200px;
+}
+
+.button1 {
+    margin-left: 37em;
+    margin-bottom: 7px;
+    margin-top: 6%;
+    font-size: 14px;
+    width: 131px;
+    height: 35px;
+    background-color: #3371B5;
+    color: white;
+}
+
+// mat-label focused style
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: #a03037!important;
+}
+
+// mat-label error style
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+    color: #a03037!important;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+    /*click effect color change*/
+    background-color: #a03037 !important;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #a03037!important;
+    /*inner circle color change*/
+}
+
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #a03037!important;
+    /*outer ring color change*/
+}

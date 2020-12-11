@@ -1,0 +1,67 @@
+<div class="container">
+
+
+    <div style="background-color: #A03037; width: 100%; margin-bottom: 10px;">
+        <h2 style="color: white; text-align: center;padding-top: 10px;">Add Book</h2>
+    </div>
+
+
+    <form  >
+        <div class="book-details">
+            <mat-form-field appearance="outline"   >
+                <mat-label>Book Name</mat-label>
+                <mat-error *ngIf="bookName.invalid"> {{bookNameValidation()}}</mat-error>
+                <input type="name" matInput placeholder="Enter your Bookname" id="bookName" [formControl]="bookName"   [(ngModel)]="addbooks.bookName"  autocomplete="off" required>
+                <mat-icon matSuffix style="color: grey;">book</mat-icon>
+            </mat-form-field>
+        </div>
+         
+        <div class="book-details">
+            <mat-form-field appearance="outline" >
+                <mat-label >Book Authour</mat-label>
+                <mat-error *ngIf="authorName.invalid"> {{bookAuthorValidation()}}</mat-error>
+                <input type="name" matInput placeholder="Enter your Bookauthour" id="bookAuthor"  [(ngModel)]="addbooks.authorName" [formControl]="authorName"  autocomplete="off" required>
+                <mat-icon matSuffix style="color: grey;">person</mat-icon> 
+            </mat-form-field>
+        </div>
+
+
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" >
+            <mat-form-field appearance="outline" class="example-full-width3">
+                <mat-label >Book Price</mat-label>
+                <mat-error *ngIf="price.invalid"> {{bookPriceValidation()}}</mat-error>
+                <input type="number" matInput placeholder=" price" id="price" [(ngModel)]="addbooks.price" [formControl]="price" autocomplete="off" required>
+                <mat-icon matSuffix style="color: grey;"> 
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M8,3H18L17,5H13.74C14.22,5.58 14.58,6.26 14.79,7H18L17,9H15C14.75,11.57 12.74,13.63 10.2,13.96V14H9.5L15.5,21H13L7,14V12H9.5V12C11.26,12 12.72,10.7 12.96,9H7L8,7H12.66C12.1,5.82 10.9,5 9.5,5H7L8,3Z" />
+                    </svg>
+                </mat-icon>
+            </mat-form-field>
+        
+            <mat-form-field appearance="outline" class="example-full-width4" >
+                <mat-label>Book Quantity</mat-label>
+                <mat-error *ngIf="noOfBooks.invalid"> {{noOfBooksValidation()}}</mat-error>
+                <input type="text"   matInput placeholder="No Of Books" id="qty" [(ngModel)]="addbooks.noOfBooks" [formControl]="noOfBooks" autocomplete="off" required>
+                <mat-icon matSuffix style="color: grey;">pets</mat-icon>
+            </mat-form-field>
+        </div>
+      
+        <div class="book-details">
+            <mat-form-field appearance="outline"  >
+                <mat-label>Book Description</mat-label>
+                <mat-error *ngIf="bookDetails.invalid"> {{bookDescriptionValidation()}}</mat-error>
+                <input type="text"  id="desc" matInput placeholder="Enter your bookDescription" [(ngModel)]="addbooks.bookDetails" [formControl]="bookDetails"autocomplete="off" required>
+                <mat-icon matSuffix style="color: grey;">edit</mat-icon>
+            </mat-form-field>
+        </div>
+        
+        <div class="book-details">
+            <input type="file" name="image" (change)="onSelectedImage($event)" />
+        </div>
+        <div class="submit">
+            <button mat-button id="submit" [disabled]=" bookName.invalid || authorName.invalid || price.invalid || bookDetails.invalid || noOfBooks.invalid" type="submit" style="border: none;border-radius: 0px; outline: none;" (click)="onClickaddBook()">
+                Add Book
+            </button>
+        </div>
+    </form>
+</div>

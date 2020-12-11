@@ -1,0 +1,41 @@
+<div class="main-container">
+    <!-- <div class="container"></div> -->
+    <div class="title">Books
+    </div>
+    <br>
+
+    <div class="list-books">
+
+        <div *ngFor="let book of bookList | booksearchpipe:bookSearch">
+
+
+            <mat-card style="height: 22.5em; width: 220px;  margin-right: 40px;" (click)="getReviews(book)">
+                <mat-card-title>
+                    <img src="assets\bookimage\{{book.image}}" style="height: 150px; width: 90px;
+                      margin-left: 55px; margin-right: 55px; padding-top: 20px; padding-bottom: 20px; " />
+                </mat-card-title>
+                <mat-card-content style="width: 17em; ">
+                    <div class="out-of-stock " *ngIf="!book.noOfBooks ">Out Of stock</div>
+                    <div class="bookname ">{{ book.bookName }}</div>
+                    <div class="authorname ">by {{ book.authorName }}</div>
+                    <div class="price ">Rs. {{ book.price }}</div>
+
+                    <div>
+
+                        <button *ngIf="totalRate > 0" class="single" fxLayout="row" [ngStyle]="{ 'background-color': color }">
+                        <div>
+                          {{ totalRate }}
+                        </div>
+                        <mat-icon
+                          style="font-size: 14px; padding-top: 1.8px; color: white;"
+                        >
+                          star
+                        </mat-icon>
+                      </button>
+                    </div>
+                </mat-card-content>
+
+            </mat-card>
+        </div>
+    </div>
+</div>

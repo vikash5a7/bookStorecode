@@ -1,0 +1,20 @@
+.container {
+   display: flex;
+   flex-direction: column;
+  }
+  .submit{
+      display: flex;
+      justify-content: flex-end;
+  }
+  input {
+    font-size:large;
+    outline: none;
+  }
+  button {
+    border-radius: 0px;
+    outline: none;
+    height: auto;
+    width: 5rem;
+    background-color: rgba(131, 4, 4, 0.8);
+    color: whitesmoke;
+  }

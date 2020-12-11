@@ -1,0 +1,60 @@
+<div fxLayoutAlign="center center" fxFlexFill style="display: flex;">
+    <div *ngIf="isLoading">
+        <app-spineer></app-spineer>
+    </div>
+    <mat-card fxFlex="28" *ngIf="!isLoading">
+
+        <div style="text-align: center;">
+
+            <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="flex-start" style="background-color: #A03037; padding-top: 16px;">
+                <div class="imgLogo">
+                    <img src="assets\education.svg" alt="">
+                </div>
+                <h2 class="title">Bookstore</h2>
+            </div>
+            <h2>Sign in</h2>
+            <p>Use your Bookstore Account</p>
+        </div>
+        <div class="alert alert-danger text-justify" [hidden]="!error">{{error}}</div>
+        <form action="" fxLayout="column" fxLayoutAlign="start start" #loginForm=ngForm (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+
+            <mat-form-field appearance="outline" fxLayout="column" style="width: 100%;">
+                <mat-label>Enter your Email</mat-label>
+                <input id="email" email required matInput #emailId="ngModel" type="email" placeholder="Email" [(ngModel)]="form.email" name="email">
+                <mat-icon style="color: #e1e4e4;" matSuffix>email</mat-icon>
+
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-label>Enter Password</mat-label>
+                <input id="password" minlength="3" required [(ngModel)]="form.password" name="password" matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon style="color: #e1e4e4;">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <a fxFlexAlign="end" style="color: #e0e0e0;" [routerLink]="[ '/forget-password']">Forget password ?</a>
+            <a fxFlexAlign="start" style="color: #cab5b5;" [routerLink]="[ '/register']">Are you new User ?</a>
+            <br>
+            <div class="text-left">
+                <h4>Login As</h4>
+                <mat-radio-group aria-label="Select an option" [(ngModel)]="form.role" name="role">
+                    <mat-radio-button id="userRadioBtn" value="user" required="required"> User </mat-radio-button> &nbsp;
+                    <mat-radio-button id="sellerRadioBtn" value="seller" required="required">Seller </mat-radio-button> &nbsp;
+                    <mat-radio-button id="adminRadioBtn" value="admin" required="required"> Admin </mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <br>
+            <div fxFlexAlign="end">
+                <button id="submit" mat-raised-buttontype="submit" style="
+            background-color: #a03037;
+            border-radius: 5px;
+            text-decoration-color:#FFFFFF;
+            font-size: 20px;
+            font-weight: 500;
+            color: whitesmoke;
+            width: 106px;
+            height: 40px;
+            " [disabled]="!loginForm.valid" id="loginBtn" type="submit">Login</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

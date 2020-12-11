@@ -1,0 +1,122 @@
+.display {
+    margin-left: 10%;
+  }
+  .cartdetails {
+    flex-wrap: wrap;
+    display: block;
+    position: relative;
+    align-items: flex-start;
+    padding-top: 25px;
+  }
+  .bookMatcard {
+    background-color: whitesmoke;
+    padding-bottom: 2.5%;
+    padding-top: 2.5%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .bookdetails {
+    flex-wrap: wrap;
+    display: block;
+    // flex-direction: column;
+    margin-left: 45px;
+    margin-bottom: 30px;
+    width: 50%;
+  }
+  .image {
+    display: inline-block;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .booktitle {
+    width: 100%;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #0a0102;
+    opacity: 1;
+    display: flex;
+    margin-left: -25px;
+  }
+  .sub {
+    color: #9d9d9d;
+    opacity: 1;
+    margin-left: -25px;
+  }
+  
+  .matcard2 {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    border: 1px solid #9d9d9d;
+    border-radius: 3px;
+  }
+  .bookimg {
+    top: 192px;
+    left: 213px;
+    width: 200px;
+    height: 312px;
+  }
+  .bookimg2 {
+    top: 192px;
+    left: 213px;
+    width: 90px;
+    height: 218px;
+  }
+  
+  .totalprice {
+    font: Bold 18px/15px Lato;
+    margin-bottom: 30px;
+  }
+  @media (min-width: 728px) {
+    .foot {
+      margin-right: 13%;
+      margin-top: 272px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .foot {
+      margin-right: 13%;
+      margin-top: 600px;
+    }
+  }
+  @media (max-width: 414px) {
+    .foot {
+      margin-right: 8%;
+    }
+    .matcard2 {
+      margin-left: -18%;
+      width: 120%;
+    }
+    .bookdetails {
+      margin-left: 5%;
+      width: 85%;
+      .add {
+        width: fit-content !important;
+      }
+    }
+  }
+  .add {
+    width: 220px;
+    border: 1px solid #9d9d9d;
+    border-radius: 1px;
+    margin-right: 3%;
+  }
+  .rating {
+    border: 1px solid #d6d3d3;
+    border-radius: 2px;
+    margin-top: 5px;
+  }
+  .single {
+    border: none;
+  }
+  .total {
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 9px;
+    height: 40px;
+    width: fit-content !important;
+    padding-right: 1px;
+    border-radius: 3px;
+  }

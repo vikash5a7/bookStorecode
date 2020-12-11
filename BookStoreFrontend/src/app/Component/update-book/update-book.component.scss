@@ -1,0 +1,223 @@
+.container {
+    height: 100%;
+    width: 100%;
+    margin-top: 5%;
+    // margin-left: 1rem;
+    // margin-right: 1rem;
+    padding-bottom: 5%;
+    // margin: 0rem;
+    // padding: 0rem;
+    display: flex;
+    flex-direction: column;
+  }
+  button {
+    background-color: rgba(131, 4, 4, 0.8);
+    font-size: 1rem;
+    color: white;
+    height: auto;
+    width: auto;
+    border-radius: 0px;
+    margin: 0px;
+  }
+  
+  html,
+  body {
+    height: 50%;
+    margin: 0;
+    padding: 0;
+  }
+  .login-wrapper {
+    height: 100%;
+  }
+  // .positronx
+  // {text-decoration:none;color:#ffffff;}
+  .box {
+    position: relative;
+    top: 0;
+    opacity: 1;
+    float: left;
+    padding: 60px 50px 40px 50px;
+    width: 83%;
+    // background-image: url(/assets/images/amm.jpg);
+    // color: rgb(255, 255, 255);
+    border-radius: 20px;
+    transform: translate(50%, 50%);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    z-index: 5;
+    max-width: 330px;
+    margin: -24px;
+  }
+  
+
+ 
+  .mat-form-field-infix {
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 15px;
+}
+ 
+  .submit {
+    display: flex;
+    justify-content: flex-end;
+    // align-items: center;
+    // align-content: center;
+    padding-top: 30px;
+    margin: 0px ;
+    // margin-left: 40px;
+  }
+  .login-wrapper .btn-block3 {
+    font-size: 18px;
+    color: #a03037;
+  }
+  .login-wrapper .btn-block1 {
+    font-size: 18px;
+    //  color: green;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    background-color: #a03037;
+    border-radius: 3px;
+    border: none;
+    opacity: 1;
+  
+    // background-image: url(/assets/images/bookstore.jpg);
+  }
+  .login-wrapper .btn-block2 {
+    font-size: 18px;
+    //  color: green;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    background-color: #a03037;
+    border-radius: 3px;
+    border: none;
+    opacity: 1;
+  
+    // background-image: url(/assets/images/bookstore.jpg);
+  }
+  
+  .login-wrapper mat-card-header {
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-weight: 700;
+  }
+  .login-wrapper mat-card-header mat-card-title {
+    font-size: 30px;
+    margin: 0;
+  }
+  .login-wrapper .mat-card {
+    padding: 30px 50px 30px;
+  }
+  .login-wrapper .mat-stroked-button {
+    border: 1px solid currentColor;
+    line-height: 54px;
+    background: #fff7fa;
+  }
+  // .login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
+  //   padding: 0.8375em 0;
+  //   width:50%;
+  // }
+  .login-wrapper .mat-form-field-infix {
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 50%;
+}
+  .login-wrapper {
+    background-image: url(/assets/images/blur.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  
+    background-position: center;
+  }
+  .login-wrapper .login {
+    min-height: 70vh;
+  }
+  ::ng-deep {
+    $custom-main-color: red;
+    $custom-label-color: rgba(0, 0, 0, 0.6);
+  
+    // mat-icon-stepper selected color change
+    .mat-step-header .mat-step-icon-selected,
+    .mat-step-header .mat-step-icon-state-done,
+    .mat-step-header .mat-step-icon-state-edit {
+      background-color: #a03037 !important;
+    }
+  
+    // input outline color
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+      color: rgb(159, 161, 159) !important;
+    }
+  
+    // mat-input focused color
+    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+      color: #a03037 !important;
+    }
+  
+    // mat-input error outline color
+    .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
+      .mat-form-field-outline-thick {
+      color: $custom-main-color !important;
+      opacity: 0.8 !important;
+    }
+  
+    // mat-input caret color
+    .mat-input-element {
+      caret-color: $custom-main-color !important;
+    }
+  
+    // mat-input error caret color
+    .mat-form-field-invalid .mat-input-element,
+    .mat-warn .mat-input-element {
+      caret-color: $custom-main-color !important;
+    }
+  
+    // mat-label normal state style
+    .mat-form-field-label {
+      color: rgb(110, 114, 110) !important;
+    }
+  
+    // mat-label focused style
+    .mat-form-field.mat-focused .mat-form-field-label {
+      color: #0a0102 !important;
+    }
+  
+    // mat-label error style
+    .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+      color: $custom-main-color !important;
+    }
+  }
+  .grab {
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
+  .example-radio-group {
+    display: inline-flex;
+    flex-direction: row;
+  }
+  .popup
+  {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      width: 70%;
+      border:none;
+      outline:none;
+      float: left;
+  }
+  .matcard{
+    /* margin-top: 100px; */
+    display: flex;
+    // justify-content: center;
+    width: 36%;
+    border-radius: 12px;
+    height: 3%;
+    background-color:whitesmoke;
+}

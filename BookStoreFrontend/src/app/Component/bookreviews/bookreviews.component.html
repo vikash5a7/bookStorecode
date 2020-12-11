@@ -1,0 +1,65 @@
+<div role="combobox" flex="column" >
+  <div>
+    <div>
+      <mat-card
+        class="matcard2">
+        <div style="margin-bottom: 8px; margin-left: 27px; margin-top:20px; font: Bold 18px/15px Lato;" *ngIf="reviewList.length>0">
+          Reviews:
+          <button
+          *ngIf="totalRate > 0"
+          class="single"
+          fxLayout="row"
+          style="background-color: rgb(16,136,16)"
+        >
+          <div>
+            {{ totalRate }}
+          </div>
+          <mat-icon
+            style="font-size: 14px; padding-top: 1.8px; color: white;"
+          >
+            star
+          </mat-icon>
+        </button>
+        </div>
+        <div style="margin-bottom: 8px; margin-left: 27px; margin-top:20px; font: Bold 18px/15px Lato;" *ngIf="reviewList.length==0">
+          Reviews: No reviews
+        </div>
+        <div *ngFor="let book of reviewList">
+        <div style="margin-left: 27px;font: Bold 18px/15px Lato;">{{book.name}}</div>
+        
+        <!-- <button
+        class="single"
+        fxLayout="row"
+        style="background-color: rgb(16,136,16);margin-left: 27px;"
+      >
+      <button
+      *ngIf="book.rating>=2"
+      class="single"
+      fxLayout="row"
+      style="background-color: rgb(245,182,110);margin-left: 27px;"
+    >
+    <button
+    *ngIf="book.rating>=1"
+    class="single"
+    fxLayout="row"
+    style="background-color: rgb(250,0,0);margin-left: 27px;"
+  >
+        <div>
+          {{ book.rating }}
+        </div>
+        <mat-icon
+          style="font-size: 14px; padding-top: 1.8px; color: white;"
+        >
+          star
+        </mat-icon>
+      </button> -->
+        <div style="margin-left: 27px;">{{book.review}}</div>
+        <br>
+      </div>
+
+      </mat-card>
+    </div>
+  </div>
+  </div>
+
+

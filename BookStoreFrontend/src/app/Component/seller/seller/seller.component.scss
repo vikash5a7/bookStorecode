@@ -1,0 +1,169 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
+    margin-left: 10%;
+    height: auto;
+    margin-right: 10%;
+  }
+
+  .allBooks{
+      display: flex;
+      flex-direction: column;
+      
+  }
+  .icon-display{
+    transform: scale(2);
+color: white;
+background-color: rgba(131, 4, 4, 0.8);
+border-radius: 2rem;
+cursor: pointer;
+  }
+  
+.plus{
+    background-color: rgba(131, 4, 4, 0.8);
+     border-radius: 3rem;
+    
+    // padding: 10px;
+}
+  
+  
+  .list-books {
+    display: flex;
+    flex-direction: column;
+  // width: 20rem;
+    // justify-content: space-around;
+    align-items: flex-start;
+    // z-index: 3001;
+  }
+  mat-card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: auto;
+    padding-right: 2em;
+    border: 1px solid;
+    border-color: rgb(240, 238, 238);
+    margin-bottom: 20px;
+  }
+  .mat-card.mat-card {
+    padding: 0px;
+  }
+  mat-card-title {
+    background: #f5f5f5 0% 0% no-repeat padding-box;
+  }
+  .mat-card-title.mat-card-title {
+    display: flex;
+    height: 171px auto;
+    width: 233px;
+    align-items: center;
+    align-content: center;
+  }
+  .bookname {
+     
+    margin-left: 20px;
+    margin-bottom: 7px;
+    font-size:larger;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    font-family: Lato, Regular;
+  }
+  .authorname {
+    margin-left: 20px;
+    margin-bottom: 7px;
+    font-size: 1rem;
+    font-family: Lato, Regular;
+    color: gray;
+  }
+  .price {
+    margin-left: 20px;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-family: Lato, Regular;
+    // font-weight: bolder;
+    color: rgb(8, 8, 8);
+  }
+  .noofbooks {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-family: Lato;
+    // color: rgba(87, 25, 25, 0.904);
+  }
+
+  .status{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-family: Lato;
+  }
+  .description{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-family: Lato, Regular;
+    // color: gray;
+  }
+ 
+  
+  .btn-addbook {
+    height: 50px;
+    width: 120px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: rgba(87, 25, 25, 0.904);
+  }
+  
+
+  .addedbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+.out-of-stock {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    text-align: center;
+    padding: 8px 0px;
+    font-size: medium;
+    position: absolute;
+    font-family: Lato;
+    font-weight: bold;
+    top: 100px;
+    left: 30px;
+    right: 30px;
+    box-shadow: 0px 3px 8px #00000029;
+    border-radius: 2px;
+    opacity: 0.9;
+    text-transform: uppercase;
+  }
+  
+  .out-of-stock {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    text-align: center;
+    padding: 8px 0px;
+    font-size: medium;
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    right: 30px;
+    box-shadow: 0px 3px 8px #00000029;
+    border-radius: 2px;
+    opacity: 0.9;
+    text-transform: uppercase;
+  }
+
+  mat-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+    color: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .list-books {
+      display: flex;
+      flex-direction: column;
+    }
+  }

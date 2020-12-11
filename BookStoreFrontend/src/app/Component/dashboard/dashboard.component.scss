@@ -1,0 +1,83 @@
+  .dashboard-content {
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+  }
+
+  .container {
+      overflow-x: hidden;
+      overflow-y: hidden;
+      height: 100%;
+      width: 100%;
+  }
+
+  .bottom {
+      background-color: #2E1D1E;
+      padding: 10px;
+      font-family: Lato;
+      padding-left: 100px;
+      color: white;
+      bottom: 0px;
+      width: 100%;
+  }
+
+  .mat-title {
+      color: #fff;
+      margin: 0;
+      padding-top: 5px;
+  }
+
+  .search {
+      background-color: #fff;
+      padding: 3px;
+      padding-left: 15px;
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+  }
+
+  input.input:focus {
+      outline-width: 0;
+  }
+
+
+  sidenav-div {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    border: none;
+    border-color: whitesmoke;
+    background-color: white;
+  }
+  
+  .sidenav-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    border-color: whitesmoke;
+    background-color: white;
+  }
+  
+  .matSidenav {
+    font-size: smaller;
+    font-family: monospace;
+    width: 10%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    overflow: hidden;
+    justify-content: center !important;
+    background-color: white;
+    // background-color: transparent;
+    // border-color: 1px whitesmoke;
+    border:none;
+    margin-top: 10px;
+  }  
+  .sidenav-content {
+    justify-content: center;
+    width: 100%;
+    align-content: center;
+    height: 100%;
+    background-color: white;
+  }

@@ -1,0 +1,275 @@
+  
+<div role="combobox" flex="column" style="margin-left: 16%;">
+  <mat-card class="matcard1" [ngClass]="open == true ? 'matcardincr' : 'dummy'">
+    <div class="mycart">My cart&nbsp;({{ bookincart }})</div>
+    <!-- <div *ngFor="let cart of books"> -->
+    <div *ngFor="let book of myDatas">
+      <div *ngIf="book.bookName != null">
+        <div class="cartdetails" fxLayout="row" fxLayoutAlign="start start">
+          <!-- "assets/images/Image 11@2x.png" -->
+          <img class="bookimg" src="assets/images/Image 11@2x.png" />
+          <div class="bookdetails">
+            <div class="booktitle">
+              <!-- Don't Make Me Think -->
+              {{ book.bookName }}
+            </div>
+            <!-- <div class="subtitle" fxLayout="column" fxLayoutAlign="center start"> -->
+            <div class="sub">{{ book.bookAuthor }}</div>
+            <div style="margin-bottom: 30px; font: Bold 18px/15px Lato;">
+              Rs. {{ book.bookPrice }}
+            </div>
+          </div>
+        </div>
+
+        <div
+          fxLayout="row"
+          fxLayoutAlign="center center"
+          fxLayOutGap="10px"
+          style="margin-right: 280px; margin-bottom: 20px;"
+        >
+          <div>
+            <button mat-icon-button (click)="onQuantity(book)">
+              <mat-icon>remove_circle_outline</mat-icon>
+            </button>
+          </div>
+
+          <div class="quantity">{{ cart.QuantityOfBooks }}</div>
+          <div>
+            <button mat-icon-button (click)="onQuantity(book)">
+              <mat-icon>add_circle_outline</mat-icon>
+            </button>
+          </div>
+          <div style="font: 18px/15px Lato;">&nbsp; Remove</div>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+    <!----- end of for ----------->
+    <div fxLayout="column" fxLayoutAlign="end end">
+      <button mat-raised-button class="button" (click)="onOpen()" *ngIf="!open">
+        Place order
+      </button>
+    </div>
+  </mat-card>
+
+  <br />
+  <mat-card class="mat" *ngIf="!open">
+    <div>
+      Customer Details
+    </div>
+  </mat-card>
+
+  <mat-card
+    class="matcard1"
+    *ngIf="open"
+    [ngClass]="open2 == true ? 'matcardincr' : ''"
+  >
+    <div class="custom">
+      Customer Details
+    </div>
+    <button *ngIf="!fields" class="editbutton" (click)="onEdit()">
+      <div fxLayout="row" fxLayoutAlign="end start">
+        Edit
+      </div>
+      <!--------------------- Name ------------------------>
+    </button>
+
+    <div class="custom">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>Name</mat-label>
+          <mat-error *ngIf="name.invalid"> {{ nameValidation() }}</mat-error>
+          <input
+            type="text"
+            matInput
+            placeholder="Enter your Name"
+            required
+            [(ngModel)]="addModel.name"
+            [disabled]="!fields"
+          />
+        </mat-form-field>
+        <!------------------------ phoneNumber ------------------>
+        <div style="margin-left: 7px;">
+          <!-- &nbsp; -->
+          <mat-form-field appearance="outline" class="input">
+            <mat-label>phoneNumber</mat-label>
+            <mat-error *ngIf="mobile.invalid">{{ phoneNumber() }}</mat-error>
+            <input
+              type="text"
+              matInput
+              placeholder="Enter your phoneNumber"
+              required
+              [(ngModel)]="addModel.phoneNumber"
+              [disabled]="!fields"
+              autocomplete="off"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <!------------------------------- pincode ------------------------->
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>pincode</mat-label>
+          <mat-error *ngIf="pincode.invalid">
+            {{ pincodeValidation() }}</mat-error
+          >
+          <input
+            type="text"
+            matInput
+            placeholder="Enter your pincode"
+            required
+            [(ngModel)]="addModel.pincode"
+            [disabled]="!fields"
+            autocomplete="off"
+          />
+        </mat-form-field>
+        <!---------------------------- locality ------------------------------------->
+        <div style="margin-left: 7px;">
+          <mat-form-field appearance="outline" class="input">
+            <mat-label>Locality</mat-label>
+            <mat-error *ngIf="locality.invalid">
+              {{ localityValidation() }}</mat-error
+            >
+            <input
+              type="text"
+              matInput
+              placeholder="Enter your Locality"
+              required
+              [(ngModel)]="addModel.locality"
+              [disabled]="!fields"
+              autocomplete="off"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <!-------------------------------- address ------------------------------------------>
+      <mat-form-field appearance="outline" class="address">
+        <mat-label>Address</mat-label>
+        <mat-error *ngIf="address.invalid">
+          {{ addressValidation() }}</mat-error
+        >
+        <input
+          type="text"
+          matInput
+          placeholder="Address"
+          required
+          [(ngModel)]="addModel.address"
+          [disabled]="!fields"
+          style="height: 51px;"
+          autocomplete="off"
+        />
+      </mat-form-field>
+      <!-- </div> -->
+      <!-- <div class="fieldtop"> -->
+      <br />
+
+      <div
+        fxLayout="row"
+        fxLayoutAlign="start center"
+        style="margin-top: 21px;"
+      >
+        <!---------------------------------- City ---------------------------------------->
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>City/town</mat-label>
+          <mat-error *ngIf="city.invalid"> {{ cityValidation() }}</mat-error>
+          <input
+            type="text"
+            matInput
+            placeholder="Enter your city/town"
+            required
+            [(ngModel)]="addModel.city"
+            [disabled]="!fields"
+            autocomplete="off"
+          />
+        </mat-form-field>
+        <!----------------------------------- landmark ------------------------------------>
+        <div style="margin-left: 7px;">
+          <mat-form-field appearance="outline" class="input">
+            <mat-label>Landmark</mat-label>
+            <mat-error *ngIf="landmark.invalid">{{
+              landmarkValidation()
+            }}</mat-error>
+            <input
+              type="text"
+              matInput
+              placeholder="Enter your landmark"
+              required
+              [(ngModel)]="addModel.landmark"
+              [disabled]="!fields"
+              autocomplete="off"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <br />
+      <div fxLayout="row" fxLayoutAlign="start center">Type</div>
+      <br />
+      <div fxLayout="column" fxLayoutAlign="start start">
+        <mat-radio-group
+          aria-label="Select an option"
+          fxLayoutGap="110px"
+          [disabled]="!fields"
+        >
+          <mat-radio-button value="1">Home</mat-radio-button>
+          <mat-radio-button value="2">Work</mat-radio-button>
+          <mat-radio-button value="3">Other</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div fxLayout="column" fxLayoutAlign="end end">
+        <button
+          mat-raised-button
+          *ngIf="!open2"
+          class="button"
+          (click)="onOpen2()"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+  </mat-card>
+
+  <br />
+  <mat-card class="mat2" *ngIf="!open2">
+    <div>
+      Order summery
+    </div>
+  </mat-card>
+
+  <mat-card class="matcard2" *ngIf="open2">
+    <div class="mycart">My cart&nbsp;({{ bookincart }})</div>
+
+    <div *ngFor="let book of myDatas">
+      <div *ngIf="book.bookName != null">
+        <div class="cartdetails" fxLayout="row" fxLayoutAlign="start start">
+          <img class="bookimg" src="assets/images/Image 11@2x.png" />
+          <!-- <img class="bookimg" src="{{ book.bookImage }}" /> -->
+          <div class="bookdetails">
+            <div class="booktitle">
+              <!-- Don't Make Me Think -->
+              {{ book.bookName }}
+            </div>
+
+            <div class="sub">{{ book.bookAuthor }}</div>
+            <div style="font: Bold 18px/15px Lato; margin-bottom: 30px;">
+              Rs. {{ book.bookPrice }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="end end">
+      <button mat-raised-button class="button" (click)="onCheckOut()">
+        Checkout
+      </button>
+    </div>
+  </mat-card>
+  <br /><br />
+</div>
+
+
+
+
+user 1===eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpZCI6NX0.CYwENgEFGPrCM0fRz4-rm3f04Ey6RuR1-bA8WPsW-9wTpbbv1qVeRtWdGAyZa7WlC1E58G6Q4uLuGkRQQI_t7Q

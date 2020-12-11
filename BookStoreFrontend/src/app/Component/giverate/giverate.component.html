@@ -1,0 +1,70 @@
+<div style="width: 100%;" style="height: 11%;">
+    <app-toolbar flexLayout="row"></app-toolbar>
+</div>
+<br><br>
+<div role="combobox" flex="column" class="rating-container">
+    <div fxLayout="row" class="giverating" fxLayoutAlign="space-between stretch">
+        <mat-card>
+            <div fxLayout="row" class="twocards">
+                <div>
+                    <img class="bookimg" src="assets\bookimage\{{bookImage}}" />
+                </div>
+                <div fxLayout="column" style="margin-left: 20px;">
+                    <div class="booktitle" style="word-wrap: break-word; margin-bottom: 5%; font-size: 20px;">
+                        <Strong>{{ bookName }}</Strong>
+                    </div>
+                    <div class="sub" style="word-wrap: break-word; margin-bottom: 5%;">
+                        by {{ bookAuthor }}
+                    </div>
+                    <div>
+                        <button *ngIf="totalRate > 0" class="single" fxLayout="row" [ngStyle]="{ 'background-color': color }">
+                <div>
+                  {{ totalRate }}
+                </div>
+                <mat-icon
+                  style="font-size: 14px; padding-top: 1.8px; color: white;"
+                >
+                  star
+                </mat-icon>
+              </button>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+        <mat-card>
+            <div class="twocards">
+                <div>
+                    <strong>Rate the Book</strong>
+                </div>
+                <div fxLayout="row" class="rating">
+                    <button mat-icon-button [color]="color" *ngFor="let ratingId of ratingArr; index as i" [id]="'star_' + i" (click)="onClick(i + 1)" fxLayout="row" [matTooltip]="ratingId + 1" matTooltipPosition="above">
+              <mat-icon>
+                {{ showIcon(i) }}
+              </mat-icon>
+            </button>
+                    <mat-error *ngIf="starCount == null || starCount == 0">
+                        Star count is <strong>required</strong> and cannot be zero
+                    </mat-error>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div fxLayout="column" class="singlecard">
+        <mat-card>
+            <div style="margin-bottom: 2%;">
+                <strong>Review the Book</strong>
+            </div>
+            <div class="reviewtext">
+                <textarea matTextareaAutosize class="input" [(ngModel)]="review" placeholder="Review here........"></textarea>
+            </div>
+            <div style="align-items: flex-end;">
+                <button mat-button class="rate-submit" (click)="submitRate()">
+            Submit
+          </button>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<div style=" margin-top: 8%; margin-right: 0;" class="footer">
+    <app-footer></app-footer>
+</div>

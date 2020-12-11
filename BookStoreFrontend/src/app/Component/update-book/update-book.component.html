@@ -1,0 +1,49 @@
+<div class="container">
+    <div style="background-color: #A03037; width: 100%; margin-bottom: 10px;">
+        <h2 style="color: white; text-align: center;padding-top: 10px;">Update Book</h2>
+    </div>
+    <br>
+    <form style="display: flex; flex-direction: column;margin-bottom: 0px;">
+
+          <mat-form-field appearance="outline" style="margin-bottom: -1.25em;" class="example-full-width2" >
+              <mat-label>BOOK NAME</mat-label>      
+              <input type="name" id="bookName" matInput placeholder="Enter your Bookname" [formControl]="bookName"   [(ngModel)]="data.bookName"  autocomplete="off" required>
+              <mat-icon matSuffix style="color: grey;">book</mat-icon>
+          </mat-form-field>
+         
+          <mat-form-field appearance="outline" style="margin-bottom: -1.25em;" class="example-full-width2">
+              <mat-label >AUTHOR</mat-label>
+              <input type="name" id="bookAuthor" matInput placeholder="Enter your Bookauthour"   [(ngModel)]="data.authorName" [formControl]="authorName"  autocomplete="off" required>
+              <mat-icon matSuffix style="color: grey;">person</mat-icon>  
+          </mat-form-field>
+           
+          <mat-form-field appearance="outline" style="margin-bottom: -1.25em;" class="example-full-width3">
+              <mat-label >PRICE</mat-label>
+              <input type="number" id="price" matInput placeholder=" price" [(ngModel)]="data.price" [formControl]="price" required>
+              <mat-icon matSuffix style="color: grey;"> 
+                  <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M8,3H18L17,5H13.74C14.22,5.58 14.58,6.26 14.79,7H18L17,9H15C14.75,11.57 12.74,13.63 10.2,13.96V14H9.5L15.5,21H13L7,14V12H9.5V12C11.26,12 12.72,10.7 12.96,9H7L8,7H12.66C12.1,5.82 10.9,5 9.5,5H7L8,3Z" />
+                </svg>
+              </mat-icon>
+          </mat-form-field>
+        
+          <mat-form-field appearance="outline" style="margin-bottom: -1.25em;" class="example-full-width4">
+              <mat-label>BOOK QUANTITY</mat-label>
+              <input type="text" id="qty"  matInput placeholder="Enter your noofBooks" [(ngModel)]="data.noOfBooks" [formControl]="noOfBooks" autocomplete="off" required>
+              <mat-icon matSuffix style="color: grey;">pets</mat-icon>
+          </mat-form-field>
+      
+          <mat-form-field appearance="outline"  class="example-full-width5">
+              <mat-label>DESCRIPTION</mat-label>
+              <input type="text" id="desc"  matInput placeholder="Enter your book details" [(ngModel)]="data.bookDetails" [formControl]="bookDetails"autocomplete="off" required>
+              <mat-icon matSuffix style="color: grey;">edit</mat-icon>
+          </mat-form-field>
+          <!-- <div >
+            <input type="file" name="image" (change)="onSelectedImage($event)" />
+        </div> -->
+    </form>
+
+    <div class="submit">
+        <button  id="submit" mat-button [disabled]="!data.bookDetails"  (click)="updateBook()">UPDATE  </button>
+    </div>
+</div>

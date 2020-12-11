@@ -1,0 +1,193 @@
+<div *ngIf="isLoading">
+    <app-spineer></app-spineer>
+</div>
+<app-toolbar [output]="si" *ngIf="!isLoading"></app-toolbar>
+
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<div class="main-conatiner" *ngIf="!isLoading">
+    <div class="row">
+        <div class="column1">
+            <mat-label style=" display:flex; margin-left:6%;padding-top: 4%;font-family: 'Lato', sans-serif;
+        font-size: 18px;
+        color:black"> Mycart({{length}})</mat-label>
+            <div>
+                <div *ngFor="let books of book " fxLayout="row">
+                    <img style="padding-top: 24px;
+                  width: 71px;
+                  height: 126px;
+                  padding-left: 0px;
+                  margin-left: 51px;" src="assets\bookimage\{{books.booksList[0].image}}" class="bookimage">
+                    <br>
+                    <div class="details" fxLayout="row">
+                        <span style="margin-left: 11%;
+                      padding-top: 2em;
+                      font-size: 14px;">{{books.booksList[0].bookName}}</span>
+                        <h3 style="margin-left: -4em;
+                      font-size: 10px;
+                      color: slategrey;
+                      padding-top: 70px;">by:{{books.booksList[0].authorName}}</h3>
+                        <h3 style="margin-left: -2.3em;
+                      padding-top: 90px;
+                      font-size: 17px; font-weight: 600;">Rs.{{books.booksList[0].price}}</h3>
+                    </div>
+                    <div style="display: flex; flex-direction: row; margin-left: -2.0em; margin-top: 10em; border-radius: 2em;">
+                        <div style="display: flex; flex-direction: row;margin-bottom: 10px;">
+                            <div style="height: 20px; width: 20px;">
+                                <button style="  height: 25px;
+                                width: 25px;
+                                text-align: center;
+                                background-color: #f9f9f9;
+                                border-radius: 11em;
+                                border-color: #eee9e9;" [disabled]="books.quantityOfBook[0].quantityOfBook >= books.booksList[0].noOfBooks" (click)="increaseQuantity(books.booksList[0].bookId, books.quantityOfBook[0])">  +
+                          </button>
+                            </div>
+                            <div style="margin-left: 13px;
+                          margin-right: 9px;
+                          height: 23px;
+                          width: 44px;
+                          margin-top: 2px;
+                          background: #FFFFFF 0% 0% no-repeat padding-box;
+                          border: 1px solid #DBDBDB;
+                          border-radius: 1px;
+                          opacity: 1;
+                          text-align: center;
+                      ">
+                                {{books.quantityOfBook[0].quantityOfBook}}
+                            </div>
+                            <div>
+                                <button style="height: 25px;
+                                width: 25px;
+                                text-align: center;
+                                background-color: #f9f9f9;
+                                border-radius: 11em;
+                                border-color: #eee9e9;" [disabled]="books.quantityOfBook[0].quantityOfBook < 2" (click)="DecreseQuantity(books.booksList[0].bookId, books.quantityOfBook[0])">-
+                            </button>
+                            </div>
+                            <div>
+                                <button style="height: 30px; width: 60px;font-size: 12px;
+                                background-color:white;padding-top: 0em; margin-left: 10px; border: transparent;
+                               " (click)="Removecart(books.booksList[0].bookId)">Remove
+                               </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button class="button1" *ngIf="!select" (click)="Toggle()">CONTINUE</button>
+        </div>
+    </div>
+    <div class="form-conatiner">
+        <a style="font-size:15px ;margin-left: 40px;margin-top: 6%;font-family: 'Lato', sans-serif; ">Customer Details</a>
+        <br>
+        <br>
+        <div fxLayoutAlign="center center" fxLayout="column" *ngIf="select">
+            <form>
+                <mat-card-content>
+                    <div class="name-contact">
+                        <div fxFlex="45">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Name</mat-label>
+                                <input style="height: 20px;" matInput placeholder="Name" matInput [formControl]="Name" autocomplete="off" required>
+                                <mat-error required>Please enter valid name</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="45">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Phone Number</mat-label>
+                                <input style="height: 20px;" id="contact" maxlength='10' placeholder="Phone number" matInput [formControl]="phoneNumber" required />
+                                <mat-error required>Please enter valid number </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="name-contact" style="margin-top: 10px;">
+                        <div fxFlex="45">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Pincode</mat-label>
+                                <input style="height: 20px;" id="pinCode" maxlength='6' placeholder="Pincode" matInput [formControl]="pincode" autocomplete="off" required/>
+                                <mat-error required>Please enter valid pincode </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="45">
+                            <mat-form-field appearance="outline">
+                                <mat-label>locality</mat-label>
+                                <input style="height: 20px;" id="locality" matInput [formControl]="locality" placeholder="Locality" autocomplete="off" required/>
+                                <mat-error required>Please enter valid locality </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="address">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Address</mat-label>
+                            <input style="height: 30px;" id="address" placeholder="Address" matInput [formControl]="address" autocomplete="off" required/>
+                            <mat-error required>Please enter valid Address </mat-error>
+
+                        </mat-form-field>
+                    </div>
+                    <div class="name-contact">
+                        <div fxFlex="45">
+                            <mat-form-field appearance="outline">
+                                <mat-label>City</mat-label>
+                                <input style="height: 20px;" id="city" placeholder="City" matInput [formControl]="city" autocomplete="off" required/>
+                                <mat-error required>Please enter valid City name</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="45">
+                            <mat-form-field appearance="outline">
+                                <mat-label>land Mark</mat-label>
+                                <input style="height: 20px;" id="landMark" placeholder="Landmark" matInput [formControl]="landmark" autocomplete="off" required/>
+                                <mat-error required>Please enter valid land Mark </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="example-section">
+                        <label class="example-margin" style="margin-left: -3em;font-family: 'Lato', sans-serif;">Type:</label>
+                        <mat-radio-group class="example-margin" style="margin-top: 4em; margin-left: 2em;">
+                            <mat-radio-button checked style="margin-left: 40%;background-color: white; " (click)="fun('home')" value="Home" #type>Home</mat-radio-button>
+                            <mat-radio-button style="margin-left: 60%;" (click)="fun('work')" value="work" #type>Work</mat-radio-button>
+                            <mat-radio-button style="margin-left: 60%;" (click)="fun('other')" value="other" #type>Other</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </mat-card-content>
+                <div class="buttons" *ngIf="!selected" (click)="tog()">
+                    <button class="button3" style="font-family: 'Lato', sans-serif;margin-left: 75%;
+                  margin-bottom: 0%;" (click)="OnRegisterSubmit()">CONTINUE</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row2" style="padding: 10px;">
+        <div>
+            <div>
+                <a style="font-size:15px ; font-family: 'Lato', sans-serif; margin-left: 18px;margin-top: 2%;padding: 20px;">Order Summary</a>
+            </div>
+            <div class="column" *ngIf="selected">
+                <div *ngFor="let books of book " fxLayout="row" fxLayoutAlign="space-around center">
+                    <img style="    padding-top: 14px;
+              width: 81px;
+              height: 126px;
+              padding-left: 1px;
+              margin-left: 61px;" src="assets\bookimage\{{books.booksList[0].image}}" class="bookimage">
+                    <br>
+                    <div class="details">
+                        <div style="margin-left: 1%; padding-top: 0em; font-size: 16px;">
+                            <span>{{books.booksList[0].bookName}}</span></div>
+                        <div style="padding-top: 17px;margin-left: -69px;">
+                            <h2 style=" font-size: 10px;
+                          color: slategrey;">by: {{books.booksList[0].authorName}}</h2>
+                        </div>
+                        <div>
+                            <h1 style="margin-left: -41px; padding-top: 42PX; font-size: 16px;
+                        font-weight: 500">Total Price Rs.{{books.quantityOfBook[0].totalprice}}</h1>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button2" (click)="placeOrder(books.booksList[0].bookId)">CHECKOUT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom" style="height: 10%;">
+        Copyright &copy; 2020, Bookstore All rights reserved
+    </div>

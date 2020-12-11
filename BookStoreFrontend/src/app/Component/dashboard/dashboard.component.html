@@ -1,0 +1,57 @@
+<div style="width: 100%;" style="height: 11%;">
+    <app-toolbar flexLayout="row" (toggleEvent)="nameEventHander($event)">
+    </app-toolbar>
+    <!-- <app-toolbar flexLayout="row"></app-toolbar> -->
+</div>
+<div class="dashboard-content" style="height: 84%; margin-left: 0%; padding-left: 0%;">
+    <div class="sidenav-div" *ngIf="isAdmin || isSeller">
+        <mat-sidenav-container class="sidenav-container">
+
+            <mat-sidenav [(opened)]="opened2" mode="side" class="matSidenav">
+                <app-sidenavbar class="app-sidenavbar" fxFlex></app-sidenavbar>
+            </mat-sidenav>
+
+            <mat-sidenav-content class="sidenav-content">
+
+                <div *ngIf="isAdmin">
+                    <app-admin></app-admin>
+                </div>
+                <div *ngIf="isSeller">
+                    <app-seller></app-seller>
+                </div>
+
+                <!-- <app-adminunverifiedbooks></app-adminunverifiedbooks> -->
+                <!-- <app-admin></app-admin> -->
+
+
+
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
+
+    <!-- <div *ngIf="isSeller">
+       <app-seller></app-seller> -->
+    <!-- <mat-sidenav-container style="width: 100%; height: 100%;  display: flex;">
+
+          <mat-sidenav [(opened)]="opened2" mode="side" style="background-color: transparent;">
+              <app-sidenavbar class="app-sidenavbar" fxFlex></app-sidenavbar>
+          </mat-sidenav>
+
+          <mat-sidenav-content style=" width: 100%; align-content: center;padding: 30px;">
+               <router-outlet ></router-outlet> -->
+    <!-- <app-seller></app-seller>
+          </mat-sidenav-content>
+      </mat-sidenav-container>
+  </div> -->
+
+
+
+
+    <div *ngIf="!isSeller && !isAdmin">
+        <app-displaybook></app-displaybook>
+        <router-outlet></router-outlet>
+    </div>
+
+</div>
+
+<app-footer></app-footer>

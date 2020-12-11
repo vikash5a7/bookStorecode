@@ -1,0 +1,19 @@
+<div *ngIf="!unverified&&!orders&&!review">
+
+    <app-ratedbooks></app-ratedbooks>
+</div>
+
+<div *ngIf="unverified&&!orders&&!review">
+    <app-adminunverifiedbooks></app-adminunverifiedbooks>
+</div>
+
+<div *ngIf="!unverified&&orders&&!review">
+    <app-orderstatus></app-orderstatus>
+</div>
+
+<div *ngIf="!unverified&&!orders&&review">
+    <p>reviews</p>
+    <p>Dilbert cartoonist Adams, with his usual adroit touch and sense of humor, offers an enjoyably provocative guide to the art of persuasion. In 2016, Adams predicted that Donald Trump would win the presidency when few others considered him a serious
+        contender. What did Adams see that experts missed? Declaring himself a “lifelong student” of the art of persuasion, Adams offers sharp insights into how Trump persuades people, keeps the spotlight on himself and the topics of his choice, and used
+        these skills to talk his way into the White House.</p>
+</div>

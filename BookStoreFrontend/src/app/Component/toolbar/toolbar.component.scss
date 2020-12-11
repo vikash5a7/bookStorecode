@@ -1,0 +1,62 @@
+.mat-title {
+    color: #fff;
+    margin: 0;
+    padding-top: 5px;
+}
+
+.search {
+    background-color: #fff;
+    padding: 3px;
+    padding-left: 15px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+}
+
+input.input:focus {
+    outline-width: 0;
+}
+
+input {
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    border-color: #fff;
+    font-size: 16px;
+}
+
+mat-icon {
+    color: #fff;
+}
+
+.mat-card {
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    position: relative;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.cart {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    max-width: 7%;
+    margin-right: 0px;
+    margin-left: 230px;
+}
+
+button:focus {
+    outline: none;
+}
+
+img {
+    cursor: pointer;
+    outline: none;
+}
+
+
+
+.menu{
+    margin-left: -25%;
+}
+

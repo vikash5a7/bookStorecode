@@ -1,0 +1,101 @@
+.container {
+    height: 100%;
+    width: 100%;
+    margin-top: 5%;
+    // margin-left: 1rem;
+    // margin-right: 1rem;
+    padding-bottom: 5%;
+    // margin: 0rem;
+    // padding: 0rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .names {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .price-qty {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  #bookDetails {
+    height: 60px;
+    width: auto;
+  }
+  .book-details {
+    display: flex;
+    // margin-left: 40px;
+    // margin-right: 40px;
+  }
+  .book-details mat-form-field {
+    width: 100%;
+  }
+  form {
+    width: 100%;
+  }
+  .bookcode {
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  .bookcode mat-form-field {
+    width: 100%;
+  }
+  #bookcode {
+    width: auto;
+  }
+  button {
+    background-color: rgba(131, 4, 4, 0.8);
+    font-size: 1rem;
+    color: white;
+    height: auto;
+    width: auto;
+  }
+  .submit {
+    display: flex;
+    justify-content: flex-end;
+    // align-items: center;
+    // align-content: center;
+    padding-top: 30px;
+    // margin-left: 40px;
+  }
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: rgba(61, 60, 61, 0.692);
+    font-size: medium;
+    // font-weight: bolder;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: pink;
+  }
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    color: pink;
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: pink;
+  }
+
+
+  .example-full-width3 {
+    // width: 100%;
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 50%;
+  }
+   .example-full-width4 {
+    // width: 100%;
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 50%;
+  }
+ 

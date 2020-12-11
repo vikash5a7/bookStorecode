@@ -1,0 +1,91 @@
+.cartdetails {
+    display: flex;
+    margin-left: 4%;
+    position: relative;
+    padding-top: 25px;
+  }
+  .bookdetails {
+    display: flex;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-bottom: 30px;
+    width: 15%;
+  }
+  mat-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+    color: none;
+  }
+  ::ng-deep .custom-tooltip {
+    width: 456px;
+    height: 250px;
+    text-align: left;
+    font: Regular 11px/13px Lato !important;
+    letter-spacing: 0px;
+    font-size: 15px;
+    text-align: center;
+    word-wrap: break-word;
+    //font-style: italic;
+    border: #e2e2e2 !important;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #9d9d9d !important;
+    box-shadow: 0px 3px 6px #00000029 !important;
+    opacity: 1;
+  }
+  .mycart {
+    top: 135px;
+    left: 213px;
+    width: 120px;
+    font-size: larger;
+    font: bold;
+  }
+  .mycart2 {
+    height: 35px;
+    margin-top: 12px;
+  }
+  .booktitle {
+    width: 180%;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #0a0102;
+    opacity: 1;
+    display: flex;
+    margin-left: -25px;
+  }
+  .sub {
+    color: #9d9d9d;
+    opacity: 1;
+    margin-bottom: 15%;
+    margin-top: 5%;
+    margin-left: -25px;
+  }
+  
+  .matcard2 {
+    //opacity: 1.1;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    border: 1px solid #9d9d9d;
+    border-radius: 3px;
+  }
+  .button {
+    font-size: 17px;
+    text-align: center;
+    color: white;
+    background-color: #4bb543;
+    margin-top: 32px;
+    margin-left: 10px;
+  }
+  .bookimg {
+    top: 192px;
+    left: 213px;
+    width: 95px;
+    height: 120px;
+  }
+  .totalprice {
+    font: Bold 18px/15px Lato;
+    margin-bottom: 30px;
+  }
+ 
+  

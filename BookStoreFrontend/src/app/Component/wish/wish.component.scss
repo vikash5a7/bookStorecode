@@ -1,0 +1,117 @@
+.cartdetails {
+    display: flex;
+    //margin-left: 36px;
+    margin-left: 5%;
+    position: relative;
+}
+
+.bookdetails {
+    display: flex;
+    flex-direction: column;
+    margin-left: 65px;
+}
+
+.mycart {
+    top: 135px;
+    left: 213px;
+    width: 65%;
+    height: 62px;
+    font-size: larger;
+    font: bold;
+}
+
+.booktitle {
+    width: 90%;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #0a0102;
+    opacity: 1;
+    display: flex;
+    margin-left: -46px;
+}
+
+.sub {
+    color: #9d9d9d;
+    opacity: 1;
+    margin-bottom: 15%;
+    margin-top: 5%;
+    margin-left: -46px;
+}
+
+.matcard2 {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding-bottom: 4.2%;
+    border: 1px solid #9d9d9d;
+    border-radius: 3px;
+}
+
+.button {
+    font-size: 17px;
+    margin-left: 74%;
+    margin-left: auto;
+    margin-bottom: 6%;
+    margin-top: -49px;
+    text-align: center;
+    color: white;
+    background-color: #a03037;
+    //margin-left: 185px;
+}
+
+.button2 {
+    font-size: 15px;
+    margin-left: 62%;
+    margin-bottom: 6%;
+    margin-top: -49px;
+    text-align: center;
+    color: white;
+    background-color: #a03037;
+    //margin-left: 185px;
+}
+
+.bookimg {
+    top: 192px;
+    left: 213px;
+    width: 65px;
+    height: 90px;
+}
+
+.price {
+    font: Bold 18px/15px Lato;
+    margin-bottom: 30px;
+    margin-left: -46px;
+}
+
+@media (min-width: 728px) {
+    .footer {
+        margin-right: 13%;
+        margin-top: 272px;
+    }
+    .foot {
+        margin-top: 760px;
+        margin-right: 13%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer {
+        margin-right: 13%;
+        margin-top: 600px;
+    }
+    .foot {
+        margin-top: 1100px;
+        margin-right: 13%;
+    }
+}
+
+@media (max-width: 414px) {
+    .footer {
+        margin-right: 12%;
+    }
+    .foot {
+        margin-top: 450px;
+        margin-right: 8%;
+    }
+}

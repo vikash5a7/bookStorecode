@@ -1,0 +1,86 @@
+<mat-toolbar style="background-color: rgba(131, 4, 4, 0.829);" fxLayout="row" xLayoutAlign="space-between center" fullscreen>
+  <span *ngIf="isAdmin || isSeller">
+    <button id="menuBtn" mat-icon-button (click)="ontoggel(opened)" class="menu">
+
+      <mat-icon matTooltip="Main menu">menu</mat-icon>
+    </button>
+</span>
+  <!-- home -->
+    <div class="home" fxFlex="10" fxLayoutGap="5%"></div>
+    <!-- logo  name -->
+    <div class="logo-name" fxFlex="15">
+        <div class="image" style="display: flex; justify-content: flex-start;">
+            <img src=".\assets\education.png" style="height: 35px;" alt="open book" [routerLink]="['']" />
+            <span class="mat-title" fxHide.xs="true">&nbsp;&nbsp;&nbsp;Bookstore</span
+      >
+    </div>
+  </div>
+
+  <!-- search -->
+  <div
+    class="search"
+    fxFlex="60"
+    fxLayout="row"
+    fxLayout-align="center center"
+    fxFlex.sm="70"
+  >
+  <button mat-icon-button fxHide.xs="true">
+    <mat-icon style="color: #9D9D9D; transform: scale(1.25);"
+      >search</mat-icon
+    >
+  </button>
+    <input type="text"
+      id="search"
+      class="input"
+      placeholder="Search"
+      [(ngModel)]="bookName"
+      (input)="bookSearch()"/>
+  </div>
+  <div class="wish-list" align="center" *ngIf="!isAdmin && !isSeller">
+    <span style="color: #fff; font-size: small;"></span>
+    <button mat-icon-button  routerLink="/wish" matTooltip="Wishlist">
+    <mat-icon matBadge="{{wishlistLength}}" matBadgeSize="small" >favorite_border</mat-icon>
+    </button>
+    </div>
+  <!-- Shooping cart -->
+  <div class="cart" align="center" *ngIf="!isAdmin && !isSeller">
+    <span style="color: #fff; font-size: small;">Cart</span>
+            <button mat-icon-button routerLink="/cart" matTooltip="Cart">
+                  <mat-icon matBadge="{{ length }}" matBadgeSize="small">add_shopping_cart</mat-icon>
+             </button>
+        </div>
+        <!-- to give 1 space for mobile -->
+        &nbsp;
+        <!-- Profile -->
+        <div class="profile" fxFlex="5" align="center">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+      <!-- <img [matMenuTriggerFor]="vertebrates" src="assets\account_circle-24px.svg" width="80%" style="color: #fff;" /> -->
+      <mat-icon style="transform: scale(1.7);">account_circle</mat-icon>
+    </button>
+            <mat-menu #menu="matMenu">
+                <div fxLayout="row" fxFlex="100" style=" width: 15em; height: 15em; position: initial; z-index: 3100;
+                      " fxLayoutAlign="center center">
+                    <div style="overflow: hidden; height: 12em;">
+                        <div style="margin-left: 6px;">
+                            <img style="height: 60px; width: 60px; padding: 0px; margin: 0px;" class="topic-avatar" mat-card-avatar src="assets\profilePic.jpg" />
+                        </div>
+                        <div style="width: 100%;" *ngIf="isLogin">
+                            <h4>{{ name }}</h4>
+                        </div>
+                        <div class="div-profile" *ngIf="isLogin">
+                            <div class="div-signout">
+                                <button (click)="logout($event)" style="background-color: whitesmoke;" mat-button [routerLink]="['']" class="signout-button">Signout
+                                </button>
+                            </div>
+                        </div>
+                        <div class="div-profile" *ngIf="!isLogin">
+                            <div class="div-signout" style="margin-top: 60px; margin-left: 5px;">
+                                <button [routerLink]="['/login']" mat-button class="signout-button" style="background-color: whitesmoke;">Login
+                                 </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-menu>
+        </div>
+</mat-toolbar>

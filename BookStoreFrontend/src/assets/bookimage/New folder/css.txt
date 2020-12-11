@@ -1,0 +1,286 @@
+container {
+    display: flex;
+    position: relative;
+    top: 112px;
+    left: 177px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 120px;
+    height: 100%;
+  }
+  .cartdetails {
+    display: flex;
+    margin-left: 5%;
+    margin-bottom: 5px;
+    position: relative;
+  }
+  .bookdetails {
+    display: flex;
+    flex-direction: column;
+    margin-left: 6%;
+  }
+  .mycart {
+    top: 135px;
+    left: 213px;
+    width: 150px;
+    height: 62px;
+    font-size: larger;
+    font: bold;
+  }
+  .booktitle {
+    width: 80%;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #0a0102;
+    opacity: 1;
+    display: flex;
+  }
+  .quantity {
+    width: 50px;
+    height: -12px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    opacity: 1;
+    text-align: center;
+    height: 25px;
+    padding-top: 4px;
+  }
+  .color {
+    background-color: #dbdbdb;
+  }
+  .quantitybuttons {
+    background: #fafafa;
+    opacity: 1;
+  }
+  .booktitle2 {
+    width: 80%;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #0a0102;
+    opacity: 1;
+    display: flex;
+    position: relative;
+  }
+  
+  .sub {
+    color: #9d9d9d;
+    opacity: 1;
+    margin-bottom: 15%;
+    margin-top: 5%;
+  }
+  .sub2 {
+    color: #9d9d9d;
+    opacity: 1;
+    margin-bottom: 15%;
+    margin-top: 5%;
+    width: 60%;
+  }
+  
+  .mat {
+    display: flex;
+    flex-direction: column;
+    width: 69%;
+    border: 1px solid #9d9d9d;
+    border-radius: 3px;
+    //opacity: 1.1;
+  }
+  .mat2 {
+    display: flex;
+    flex-direction: column;
+    width: 69%;
+    margin-bottom: 100px;
+    border: 1px solid #9d9d9d;
+    border-radius: 3px;
+    //opacity: 1.1;
+  }
+  .ordersummery {
+    top: 135px;
+    left: 213px;
+    height: 73px;
+    font-size: larger;
+  }
+  .matcard1 {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    //display: flex;
+    flex-direction: column;
+    width: 69%;
+    border: 1px solid #9d9d9d;
+    border-radius: 3px;
+    //opacity: 1;
+  }
+  .matcardincr {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: column;
+    width: 69%;
+    padding-bottom: 4.2%;
+    border: 1px solid #9d9d9d;
+    border-radius: 3px;
+    //opacity: 1;
+  }
+  .matcard2 {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: column;
+    width: 69%;
+    margin-bottom: 50px;
+    border: 1px solid #9d9d9d;
+    border-radius: 3px;
+    //opacity: 1.1;
+  }
+  .button {
+    font-size: 17px;
+    text-align: center;
+    color: white;
+    background-color: #3371b5;
+    border-radius: 1px;
+    border: none;
+    opacity: 1;
+    width: 120px;
+    height: 40px;
+  }
+  .address {
+    width: 72%;
+    height: 80px;
+  }
+  
+  .input {
+    width: 35%;
+    //margin-right: 42px;
+  }
+  .input2 {
+    // width: 251px;
+    // height: 69px;
+    //flex-wrap: wrap;
+    //width: 80%;
+    width: 90%;
+    // height: 45px;
+  }
+  .custom-color.mat-select-value {
+    color: green;
+  }
+  .login-wrapper .example-full-width {
+    width: 100%;
+  }
+  
+  .fieldtop {
+    margin-top: 21px;
+    margin-left: 36px;
+  }
+  
+  .bookimg {
+    top: 192px;
+    left: 213px;
+    width: 85px;
+    height: 110px;
+  }
+  .checkout {
+    border-radius: 3px;
+    opacity: 1;
+    margin-left: 86%;
+    position: inherit;
+  }
+  .custom {
+    margin-top: 21px;
+    margin-left: 36px;
+  }
+  
+  .editbutton {
+    margin-left: 714px;
+    margin-top: -21px;
+    border: none;
+    outline: none;
+    background-color: #ffff;
+  }
+  
+  ::ng-deep {
+    $custom-main-color: red;
+    $custom-label-color: rgba(0, 0, 0, 0.6);
+  
+    // mat-icon-stepper selected color change
+    .mat-step-header .mat-step-icon-selected,
+    .mat-step-header .mat-step-icon-state-done,
+    .mat-step-header .mat-step-icon-state-edit {
+      background-color: #a03037 !important;
+    }
+  
+    // input outline color
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+      color: #A03037(115, 119, 115) !important;
+    }
+  
+    // mat-input focused color
+    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+      color: #a03037 !important;
+    }
+  
+    // mat-input error outline color
+    .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
+      .mat-form-field-outline-thick {
+      color: $custom-main-color !important;
+      opacity: 0.8 !important;
+    }
+  
+    // mat-input caret color
+    .mat-input-element {
+      caret-color: $custom-main-color !important;
+    }
+  
+    // mat-input error caret color
+    .mat-form-field-invalid .mat-input-element,
+    .mat-warn .mat-input-element {
+      caret-color: $custom-main-color !important;
+    }
+  
+    // mat-label normal state style
+    .mat-form-field-label {
+      color: rgb(165, 167, 165) !important;
+    }
+  
+    // mat-label focused style
+    .mat-form-field.mat-focused .mat-form-field-label {
+      color: #0a0102 !important;
+    }
+  
+    // mat-label error style
+    .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+      color: $custom-main-color !important;
+    }
+  }
+  .grab {
+    cursor: pointer;
+  }
+  .footer {
+    text-align: center;
+    color: #fff;
+    bottom: 0;
+    max-height: 60%;
+    margin-top: 160px;
+    margin-right: 8%;
+  }
+  .totalprice {
+    font: Bold 15px/15px Lato;
+    margin-bottom: 10px;
+  }
+  .totalprice2 {
+    //font: Bold 18px/15px Lato;
+    margin-bottom: 30px;
+  }
+  @media (min-width: 728px) {
+    .footer {
+      margin-right: 13%;
+      margin-top: 272px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .footer {
+      margin-right: 13%;
+      margin-top: 600px;
+    }
+  }
+  @media (max-width: 414px) {
+    .footer {
+      margin-right: 8%;
+    }
+  }

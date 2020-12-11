@@ -1,0 +1,77 @@
+<app-toolbar></app-toolbar>
+<br><br>
+<div role="combobox" flex="column" style="margin-left: 16%;">
+    <mat-card class="matcard2">
+        <div>My WishList book&nbsp;({{ countbook }}) </div><br><br>
+        <!-- <div >My WishList&nbsp;({{ countbook }})</div> -->
+        <div *ngFor="let book of WishListdetails">
+            <div *ngIf="book != null">
+                <div class="cartdetails" style="margin-left: 2%;" fxLayout="row" fxLayoutAlign="start start">
+                    <!-- <img class="bookimg" src="assets/images/Image 11@2x.png" /> -->
+                    <img class="bookimg" src="assets\bookimage\{{book.image}}" />
+                    <div class="bookdetails">
+                        <div class="booktitle" style="word-wrap: break-word;">
+                            <!-- Don't Make Me Think -->
+                            {{ book.bookName }}
+                        </div>
+
+                        <div class="sub" style="word-wrap: break-word;">
+                            {{ book.authorName }}
+                        </div>
+                        <div class="price" style="word-wrap: break-word;">
+                            <!-- Rs. 1500 -->
+                            Rs. {{ book.price }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div fxLayoutAlign="start end" fxLayout="row wrap" style="margin-left: 12%; margin-bottom: 2%;">
+                <!-- <button
+            fxLayout="column"
+            fxLayoutAlign="end start"
+            style="
+              justify-content: flex-center;
+              margin-bottom: 22px;
+              background-color: white;
+              border: none;
+              outline: none;
+              cursor: pointer;
+            "
+            class="grab"
+            (click)="addToWish(book.bookId)"
+    >
+            <div style="font: 18px/15px Lato; flex-wrap: wrap;">
+              &nbsp; Add To Cart
+            </div>
+          </button> -->
+
+                <!-- <button
+            style="
+              margin-bottom: 22px;
+              background-color: white;
+              border: none;
+              outline: none;
+              color: red;
+              cursor: pointer;
+            "
+            class="grab"
+            (click)="remoiveFromWish(book.bookId)"
+          >
+            <div style="font: 18px/15px Lato; flex-wrap: wrap;" >
+              &nbsp; Remove
+            </div>
+          </button> -->
+                <button mat-raised-button class="button2" (click)="addtobag(book.bookId)">
+            AddTocart
+          </button>
+                <button mat-raised-button class="button" (click)="remoiveFromWish(book.bookId)">
+            Remove
+          </button>
+            </div>
+        </div>
+    </mat-card>
+</div>
+<br><br>
+<div style='margin-top: 330px;'>
+    <app-footer></app-footer>
+</div>
