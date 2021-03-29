@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bridgelabz.bookstore.entity.Order;
-import com.bridgelabz.bookstore.implementation.OrderServiceImp;
 import com.bridgelabz.bookstore.response.Response;
 import com.bridgelabz.bookstore.service.IOrderServices;
 
@@ -43,22 +42,6 @@ public class OrderController {
 		
 	}
 	
-//	@GetMapping(value = "/books/{token}")
-//	public ResponseEntity<Response> getOrderlist(@PathVariable("token") String token) throws Exception {
-//		
-//		List<Order> orderdetails = orderService.getOrderList(token);
-//			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("placed orderlist", 200, orderdetails));
-//		
-//	}
-//	@GetMapping(value = "/books_count/{token}")
-//	public ResponseEntity<Response> getBooksCount(@PathVariable("token") String token) throws Exception {
-//		
-//		int userdetails = orderService.getCountOfBooks(token);
-//			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("count of books", 200, userdetails));
-//		
-//	}
-	
-
 	@GetMapping(value = "/books/{token}")
 	public ResponseEntity<Response> getOrderlist(@PathVariable("token") String token) throws Exception {
 		
@@ -107,11 +90,4 @@ public class OrderController {
 			return ResponseEntity.status(200).body(new Response(" orders list ",200,orderinfo));
 		
 	}
-	
-//	@PutMapping("books/editBookStatus/{bookId}/{status}")
-//	public ResponseEntity<BookResponse> editBookStatus(@PathVariable long bookId, @PathVariable String status,
-//			@RequestHeader("token") String token)
-
-
-
 }

@@ -11,9 +11,6 @@ public class UserException extends RuntimeException {
 	
 	private static final long serialVersionUID = 1L;
 
-	private int errorCode;
-	private String errorMessage;
-	
 	private String message;
 
 	public String getMessage() {
@@ -33,8 +30,6 @@ public class UserException extends RuntimeException {
 	
 	public  UserException(int statusCode, String message) {
 		super();
-		this.errorCode=statusCode;
-		this.errorMessage=message;
 	}
 
 }

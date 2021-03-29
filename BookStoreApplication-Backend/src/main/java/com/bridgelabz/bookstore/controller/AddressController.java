@@ -1,4 +1,5 @@
 package com.bridgelabz.bookstore.controller;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,6 @@ import com.bridgelabz.bookstore.entity.Users;
 import com.bridgelabz.bookstore.response.Response;
 import com.bridgelabz.bookstore.service.IAdressService;
 
-
 @RestController
 @CrossOrigin("*")
 public class AddressController {
@@ -37,17 +37,14 @@ public class AddressController {
 		if (addres != null) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("added adress", 200, addres));
 		}
-		return ResponseEntity.status(HttpStatus.ACCEPTED)
-				.body(new Response("not added", 400,addres));
+		return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("not added", 400, addres));
 
 	}
-	
-	@PutMapping
-	("/address/updateAddress")
-	public ResponseEntity<Response> updateAddress(@RequestHeader String token,@RequestBody UpdateAddressDto address)
-	{
 
-		Address addres=addressService.updateAddress(address,token);
+	@PutMapping("/address/updateAddress")
+	public ResponseEntity<Response> updateAddress(@RequestHeader String token, @RequestBody UpdateAddressDto address) {
+
+		Address addres = addressService.updateAddress(address, token);
 		if (addres != null) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("added adress", 200, addres));
 		}
@@ -56,23 +53,21 @@ public class AddressController {
 	}
 
 	@DeleteMapping("/address/delete")
-	public ResponseEntity<Response> deleteAddress(@RequestParam Long addressId,@RequestHeader String token )
-	{
-		Users message= addressService.deleteAddress(token, addressId);
-	
+	public ResponseEntity<Response> deleteAddress(@RequestParam Long addressId, @RequestHeader String token) {
+		Users message = addressService.deleteAddress(token, addressId);
+
 		if (message != null) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("added adress", 200, message));
 		}
-		return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("added adress", 200, message));		
+		return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("added adress", 200, message));
 	}
-	
-	
-	@GetMapping( "/address/users") 
+
+	@GetMapping("/address/users")
 	public ResponseEntity<Response> getAddressByUserId(@RequestHeader String token) {
 		List<Address> result = addressService.getAddressByUserId(token);
-		System.out.println("-----------result"+result);
+		System.out.println("-----------result" + result);
 		if (result != null) {
-			return  ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("added adress", 200, result));
+			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("added adress", 200, result));
 		}
 		return null;
 	}

@@ -6,7 +6,6 @@ import java.util.Optional;
 
 import javax.transaction.Transactional;
 
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +13,8 @@ import com.bridgelabz.bookstore.entity.Book;
 import com.bridgelabz.bookstore.entity.Users;
 import com.bridgelabz.bookstore.entity.WishlistBook;
 import com.bridgelabz.bookstore.repository.BookImple;
-import com.bridgelabz.bookstore.repository.BookInterface;
 import com.bridgelabz.bookstore.repository.UserRepository;
-import com.bridgelabz.bookstore.response.EmailData;
 import com.bridgelabz.bookstore.service.IWishlistService;
-import com.bridgelabz.bookstore.util.EmailProviderService;
 import com.bridgelabz.bookstore.util.JwtGenerator;
 @Service
 public class WishlistImplementation implements IWishlistService {

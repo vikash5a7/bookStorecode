@@ -49,8 +49,4 @@ public class WishlistBook {
 	public void setWishlistTime(LocalDateTime wishlistTime) {
 		this.wishlistTime = wishlistTime;
 	}
-
-	
-	
-
 }

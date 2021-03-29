@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.bridgelabz.bookstore.configuration;
 
 import org.modelmapper.ModelMapper;
