@@ -1,0 +1,15 @@
+one STS and Import project. wait till Maven update
+change the Mysql password in properties file
+update you gmail credential(email & password) in enviroments
+Run the sts
+
+check all the end points: http://localhost:8080/swagger-ui.html#/
+
+
+for email error enable true:
+https://support.google.com/accounts/answer/6010255?hl=en#zippy=%2Cuse-more-secure-apps%2Cif-less-secure-app-access-is-off-for-your-account%2Cuse-an-app-password
+
+for angular: steps are
+1. open in VS code
+2. then run "npm install"
+3. then run "ng serve"

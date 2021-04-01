@@ -68,6 +68,10 @@ public class Address implements Serializable {
 	this.address=address2.getAddress();
 	this.locality=address2.getLocality();
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	
 
 }

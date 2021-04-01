@@ -21,10 +21,9 @@ import lombok.Data;
 public class CartItem implements Serializable{
 	private static final long serialVersionUID = 1L;
 
-		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private Long cartId;
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long cartId;
 	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Book> booksList;
 	
