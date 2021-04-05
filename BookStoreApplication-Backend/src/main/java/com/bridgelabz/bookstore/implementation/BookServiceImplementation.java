@@ -77,7 +77,6 @@ public class BookServiceImplementation implements IBookService {
 				String userRole = userInfo.getRole();
 				System.out.println("actual Role is " + userRole);
 				String fetchRole = userRole;
-				
 				if (fetchRole.equals("seller") ) 
 				{
 					Book book=repository.fetchbyBookName(information.getBookName());
@@ -89,12 +88,10 @@ public class BookServiceImplementation implements IBookService {
 						bookinformation.setAuthorName(information.getAuthorName());
 						bookinformation.setPrice(information.getPrice());  
 						bookinformation.setImage(imageName);
-//						bookinformation.setStatus("OnHold");
-
+						bookinformation.setStatus("OnHold");
 						bookinformation.setNoOfBooks(information.getNoOfBooks());
-
 						bookinformation.setCreatedDateAndTime(LocalDateTime.now());
-					
+						bookinformation.setUserId(id);
 						repository.save(bookinformation);
 						return true;
 					}
@@ -122,8 +119,8 @@ public class BookServiceImplementation implements IBookService {
 		id = (long) generate.parseJWT(token);
 		Users userInfo = userRepository.getUserById(id);
 		if (userInfo != null) {
-			List<Book> users = repository.getAllBooks();
-			return users;
+			List<Book> books = repository.getAllBooks(id);
+			return books;
 		} else {
 			throw new UserException("User doesn't exist");
 		}

@@ -90,7 +90,7 @@ export class DisplaybookComponent implements OnInit {
       console.log('Total pages is: ' + this.totalPage);
       console.log('total books are ' + this.size);
       console.log('curret page number is ' + this.CurrentPageNo);
-      console.log('Books are  ', this.bookList);
+      console.log('Books are  ', this.bookList.length);
     });
   }
 getSearchBookData() {

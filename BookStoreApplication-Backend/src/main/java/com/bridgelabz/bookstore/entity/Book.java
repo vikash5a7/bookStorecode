@@ -20,6 +20,7 @@ public class Book implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long bookId;
+	private Long userId;
 	private String bookName;
 	private Long noOfBooks;
 	private Double price;

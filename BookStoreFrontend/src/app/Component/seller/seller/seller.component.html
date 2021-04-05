@@ -5,6 +5,7 @@
         <div class="addIcon"  style="display: flex; justify-content: flex-end; margin: 2rem 0.5rem;" *ngIf="sellerBooks">
             <mat-icon class="icon-display" id="addBtn" (click)="addBook()" matTooltip="Add Book">add</mat-icon>
         </div>
+        <div class="alert alert-danger text-justify" *ngIf="books.length==0">Nothing to display please add some books By clicking on Add button</div>
 
         <div class="list-books">
             <div *ngFor=" let book of books | booksearchpipe:bookSearch">
