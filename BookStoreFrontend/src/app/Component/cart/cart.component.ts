@@ -146,6 +146,7 @@ addre: Address = new Address();
     this.isLoading = false;
     this.error = error.error.message;
     console.log(error);
+    console.log('error', this.error);
     this.matSnackBar.open(this.error, 'ok', {
     duration: 5000
   });
@@ -240,6 +241,7 @@ placeOrder(bookId: any) {
   this.orderService.placeOrder(bookId, this.adressId).subscribe(
     data => this.handleResponseOfPlaceOrder(data),
     error => this.handleError(error));
+  
 }
   handleResponseOfPlaceOrder(data: any): void {
     this.isLoading = false;

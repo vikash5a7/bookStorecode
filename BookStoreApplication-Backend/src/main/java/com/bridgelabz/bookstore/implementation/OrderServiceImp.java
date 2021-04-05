@@ -121,8 +121,9 @@ public class OrderServiceImp implements IOrderServices {
 			}    
 			
 			Book book = bookRepository.findById(bookId).orElse(null);
-			String emaildata="http://localhost:4200/books/rateandreview/"+bookId+"/"+token;
 	 		String body="<html> \n"
+	 				
+	 			
 	 				+"<h3 ; style=\"background-color:#990000;color:#ffffff;\" >\n "
 	 				+ "<center>Bookstore</center> "
 	 				+ "</h3>\n "
@@ -133,7 +134,7 @@ public class OrderServiceImp implements IOrderServices {
 	 			 +userdetails.getEmail()+
 	 				" <br>"+"order details <br>"+" \n"+data+"\n"
 	 				+"please rate us below link<br>"+"\n"
-	 		+emaildata
+	 		+"http://localhost:4200/books/ratingreview<br>"
 	
 	 		+ "</body>"
 	 		+ " </html>" ;

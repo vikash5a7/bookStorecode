@@ -45,6 +45,7 @@ public class CartController {
 	
 	@DeleteMapping("bookstore/v3/cart/removeCartBooks/{bookId}")
 	public ResponseEntity<Response> removeBooksToCart(@RequestHeader(name="token") String token ,@PathVariable Long bookId) throws Exception {
+		System.out.println("jjjjjjjjjjj"+ token + bookId);
 		boolean cartdetails = cartService.removeBooksFromCart(token,bookId);
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Response("book removed from cart", 200,cartdetails));  				
 	}

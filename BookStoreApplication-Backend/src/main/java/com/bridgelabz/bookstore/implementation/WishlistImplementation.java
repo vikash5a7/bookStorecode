@@ -42,22 +42,27 @@ public class WishlistImplementation implements IWishlistService {
 	@Override
 	@Transactional
 	public List<WishlistBook> addwishBook(String token, long bookId) {
-		Long id;
+	
 
-				id = (long) generate.parseJWT(token);
-			
+				Long id = generate.parseJWT(token);
+			System.out.println("-------------   hitting 1");
 			Users user = userRepository.findById(id).get();
 			if(user!=null) {
+				System.out.println("-------------   hitting user ");
 			Book book = bookRepository.findById(bookId).get();
 			if(book!=null) {
 			List<Book> books = null;
 			for (WishlistBook d : user.getWishlistBook()) {
 				books = d.getBooksList();
-
+			}
 			if (books == null) {
 				Users userdetails = this.wishbooks(book,user);
 				return userRepository.save(userdetails).getWishlistBook();
 			}
+			
+		
+		
+			
 			Optional<Book> wishbook = books.stream()
 			.filter(t -> t.getBookId() == bookId).findFirst();
 			if (wishbook.isPresent()) {
@@ -66,7 +71,7 @@ public class WishlistImplementation implements IWishlistService {
 				Users userdetails = this.wishbooks(book,user);
 				return userRepository.save(userdetails).getWishlistBook();
 			}
-			}
+			
 
 			}//book
 			}//user
