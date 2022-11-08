@@ -9,12 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
-
 
 @Entity
 @Table
-@Data
 public class Quantity implements Serializable
 {
    
@@ -27,5 +24,25 @@ public class Quantity implements Serializable
 	private Long quantityOfBook;
 	@Column
 	private Double totalprice;
-
+	public long getQuantity_id() {
+		return quantity_id;
+	}
+	public void setQuantity_id(long quantity_id) {
+		this.quantity_id = quantity_id;
+	}
+	public Long getQuantityOfBook() {
+		return quantityOfBook;
+	}
+	public void setQuantityOfBook(Long quantityOfBook) {
+		this.quantityOfBook = quantityOfBook;
+	}
+	public Double getTotalprice() {
+		return totalprice;
+	}
+	public void setTotalprice(Double totalprice) {
+		this.totalprice = totalprice;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 }

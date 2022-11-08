@@ -48,7 +48,6 @@ public class WishlistController {
 		}
 		return ResponseEntity.status(HttpStatus.ACCEPTED)
 				.body(new Response("there no book found to remove", 200, wishbook));
-
 	}
 
 	@GetMapping("bookstore/v3/wishlist/wishlistcount")

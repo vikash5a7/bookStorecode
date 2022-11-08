@@ -11,11 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
-import lombok.Data;
-
-
-
-@Data
 @Entity
 public class Users  {
 		@Id
@@ -53,6 +48,123 @@ public class Users  {
 					+ ", role=" + role + ", address=" + address + ", cartBooks=" + cartBooks + "]";
 		}
 
-		
-		
+
+		public long getUserId() {
+			return userId;
+		}
+
+
+		public void setUserId(long userId) {
+			this.userId = userId;
+		}
+
+
+		public String getName() {
+			return name;
+		}
+
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+
+		public String getEmail() {
+			return email;
+		}
+
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+
+		public String getPassword() {
+			return password;
+		}
+
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
+
+
+		public Long getMobileNumber() {
+			return mobileNumber;
+		}
+
+
+		public void setMobileNumber(Long mobileNumber) {
+			this.mobileNumber = mobileNumber;
+		}
+
+
+		public LocalDateTime getCreatedDate() {
+			return createdDate;
+		}
+
+
+		public void setCreatedDate(LocalDateTime createdDate) {
+			this.createdDate = createdDate;
+		}
+
+
+		public boolean isVerified() {
+			return isVerified;
+		}
+
+
+		public void setVerified(boolean isVerified) {
+			this.isVerified = isVerified;
+		}
+
+
+		public String getRole() {
+			return role;
+		}
+
+
+		public void setRole(String role) {
+			this.role = role;
+		}
+
+
+		public List<Address> getAddress() {
+			return address;
+		}
+
+
+		public void setAddress(List<Address> address) {
+			this.address = address;
+		}
+
+
+		public List<CartItem> getCartBooks() {
+			return cartBooks;
+		}
+
+
+		public void setCartBooks(List<CartItem> cartBooks) {
+			this.cartBooks = cartBooks;
+		}
+
+
+		public List<WishlistBook> getWishlistBook() {
+			return wishlistBook;
+		}
+
+
+		public void setWishlistBook(List<WishlistBook> wishlistBook) {
+			this.wishlistBook = wishlistBook;
+		}
+
+
+		public List<Order> getOrderBookDetails() {
+			return orderBookDetails;
+		}
+
+
+		public void setOrderBookDetails(List<Order> orderBookDetails) {
+			this.orderBookDetails = orderBookDetails;
+		}
 }

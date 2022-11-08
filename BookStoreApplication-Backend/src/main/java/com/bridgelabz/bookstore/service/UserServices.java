@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.bridgelabz.bookstore.service;
 
 import java.util.List;
@@ -10,10 +8,6 @@ import com.bridgelabz.bookstore.entity.Users;
 import com.bridgelabz.bookstore.request.LoginInformation;
 import com.bridgelabz.bookstore.request.PasswordUpdate;
 
-/**
- * @author HP
- *
- */
 public interface UserServices {
 
 	Users login(LoginInformation information);

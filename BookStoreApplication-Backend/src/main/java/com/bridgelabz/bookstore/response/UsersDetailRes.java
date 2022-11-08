@@ -3,10 +3,6 @@
  */
 package com.bridgelabz.bookstore.response;
 
-/**
- * @author HP
- *
- */
 public class UsersDetailRes {
 	private String token;
 
@@ -14,13 +10,12 @@ public class UsersDetailRes {
 
 	private Object obj;
 
-	public UsersDetailRes(String token,int statuscode,Object obj)
-	{
-		this.token=token;
+	public UsersDetailRes(String token, int statuscode, Object obj) {
+		this.token = token;
 
-		this.statuscode=statuscode;
+		this.statuscode = statuscode;
 
-		this.obj=obj;
+		this.obj = obj;
 	}
 
 	public String getToken() {

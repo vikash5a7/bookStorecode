@@ -24,10 +24,7 @@ import com.bridgelabz.bookstore.service.ICartService;
 import com.bridgelabz.bookstore.service.IWishlistService;
 import com.bridgelabz.bookstore.util.JwtGenerator;
 
-import lombok.extern.slf4j.Slf4j;
-
 @Service
-@Slf4j
 public class CartServiceImplimentation implements ICartService {
 	@Autowired
 	private JwtGenerator generate;
@@ -56,9 +53,7 @@ public class CartServiceImplimentation implements ICartService {
 			// if the book present in wishlist and book number is not equal to zero
 			Long l = book.getNoOfBooks();
 			int i = l.intValue();
-			log.info("-------hitting or not------------------------" + i);
 			if (i > 0) {
-				log.info("-------hitting or not------------------------" + i);
 				List<WishlistBook> wishbook = user.getWishlistBook();
 				for (WishlistBook wishbooks : wishbook) {
 

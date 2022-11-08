@@ -14,10 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
-import lombok.Data;
-
 @Entity
-@Data
 public class CartItem implements Serializable{
 	private static final long serialVersionUID = 1L;
 

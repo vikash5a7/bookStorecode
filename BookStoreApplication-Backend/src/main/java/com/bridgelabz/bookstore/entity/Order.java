@@ -14,10 +14,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import lombok.Data;
-
 @Entity
-@Data
 @Table(name="order_details")
 public class Order implements Serializable{
 
@@ -58,5 +55,77 @@ public class Order implements Serializable{
 	}
 
 
+	public Long getOrderId() {
+		return orderId;
+	}
 
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+	}
+
+
+	public LocalDateTime getOrderPlacedTime() {
+		return orderPlacedTime;
+	}
+
+
+	public void setOrderPlacedTime(LocalDateTime orderPlacedTime) {
+		this.orderPlacedTime = orderPlacedTime;
+	}
+
+
+	public String getOrderStatus() {
+		return orderStatus;
+	}
+
+
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
+
+	public Double getTotalPrice() {
+		return totalPrice;
+	}
+
+
+	public void setTotalPrice(Double totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+
+	public Long getAddressId() {
+		return addressId;
+	}
+
+
+	public void setAddressId(Long addressId) {
+		this.addressId = addressId;
+	}
+
+
+	public List<Quantity> getQuantityOfBooks() {
+		return QuantityOfBooks;
+	}
+
+
+	public void setQuantityOfBooks(List<Quantity> quantityOfBooks) {
+		QuantityOfBooks = quantityOfBooks;
+	}
+
+
+	public List<Book> getBooksList() {
+		return BooksList;
+	}
+
+
+	public void setBooksList(List<Book> booksList) {
+		BooksList = booksList;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 }

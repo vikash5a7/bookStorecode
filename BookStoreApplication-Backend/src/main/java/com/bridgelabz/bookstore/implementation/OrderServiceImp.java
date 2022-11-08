@@ -25,10 +25,7 @@ import com.bridgelabz.bookstore.service.IOrderServices;
 import com.bridgelabz.bookstore.util.EmailProviderService;
 import com.bridgelabz.bookstore.util.JwtGenerator;
 
-import lombok.extern.slf4j.Slf4j;
-
 @Service
-@Slf4j
 public class OrderServiceImp implements IOrderServices {
 	@Autowired
 	private JwtGenerator generate;
@@ -63,17 +60,11 @@ public class OrderServiceImp implements IOrderServices {
 			 * is List
 			 */
 			List<CartItem> cartbook = userdetails.getCartBooks();
-			log.info("------------------------------cartbook------1--"+cartbook);
-			/*
-			 * now iterating specific cart book
-			 */
 			List<Book> userCartbooks = null;
 			for (CartItem userCart : cartbook) {
 				// select specific cart book to order
-				log.info("-----------------------usercart-------------2--"+userCart);
 				userCartbooks = userCart.getBooksList();// getting books from cart
 				for (Book book : userCartbooks) {
-					log.info("-----------------------book---------------"+book);
 					if (book.getBookId().equals(bookId))// specific book to order @path taking input of this api
 					{
 						/*
@@ -82,7 +73,6 @@ public class OrderServiceImp implements IOrderServices {
 						long orderId;
 						for (Quantity bookquantity : userCart.getQuantityOfBook()) {
 							// List q=userCart.getQuantityOfBook();
-							log.info("-----------------------QUantity-------------2--"+bookquantity);
 							Long noOfBooks = book.getNoOfBooks() - bookquantity.getQuantityOfBook();
 							book.setNoOfBooks(noOfBooks);
 							Book bb = bookRepository.save(book);
@@ -93,7 +83,6 @@ public class OrderServiceImp implements IOrderServices {
 									orderId = orderId * -1;
 								}
 								double totalprice = book.getPrice() * (bookquantity.getQuantityOfBook());
-								log.info("-----------------------QUantity-------------2--"+bookquantity.getQuantityOfBook());
 								orderDetails.setTotalPrice(totalprice);
 								quantitydetails.add(bookquantity);
 								orderDetails.setOrderId(orderId);
@@ -117,7 +106,6 @@ public class OrderServiceImp implements IOrderServices {
 			String data = "";
 			for(String dt:details) {
 				data=data+dt;	
-				log.info("\n "+dt);
 			}    
 			
 			Book book = bookRepository.findById(bookId).orElse(null);

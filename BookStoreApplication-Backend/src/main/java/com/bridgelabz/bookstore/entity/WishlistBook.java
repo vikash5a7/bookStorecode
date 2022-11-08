@@ -11,9 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import lombok.Data;
 @Entity
-@Data
 @Table(name="wishbook")
 public class WishlistBook {
 	@Id

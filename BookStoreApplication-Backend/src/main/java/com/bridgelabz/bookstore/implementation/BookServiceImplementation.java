@@ -32,9 +32,6 @@ import com.bridgelabz.bookstore.service.IBookService;
 import com.bridgelabz.bookstore.util.EmailProviderService;
 import com.bridgelabz.bookstore.util.JwtGenerator;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @Service
 public class BookServiceImplementation implements IBookService {
 	private Book bookinformation = new Book();
@@ -227,7 +224,6 @@ public class BookServiceImplementation implements IBookService {
 					{
 						Long l=info.getNoOfBooks();
 						int beforeNoOfbooks=l.intValue();
-						log.info("------------------------"+beforeNoOfbooks);
 						info.setBookId(bookId);
 						info.setBookName(information.getBookName());
 						info.setNoOfBooks(information.getNoOfBooks());
@@ -239,7 +235,7 @@ public class BookServiceImplementation implements IBookService {
 					
 						Long af=info.getNoOfBooks();
 						int afterNoOfbooks=af.intValue();
-						log.info("------------------------"+afterNoOfbooks);
+				
 //						if(after==before) {
 //						
 //						}
@@ -248,9 +244,7 @@ public class BookServiceImplementation implements IBookService {
 //							for(Book wishbook :w.getBooksList()) {
 //						
 //							if(wishbook.getBookId()==bookId) {
-						if(beforeNoOfbooks==0) {
-							log.info("------------------------"+afterNoOfbooks);
-							
+						if(beforeNoOfbooks==0) {			
 							if(afterNoOfbooks>beforeNoOfbooks) {
 								WishServiceNotify.setNotifyWishbooks(true);
 								if(WishServiceNotify.isNotifyWishbooks()==true) {
@@ -313,8 +307,7 @@ public class BookServiceImplementation implements IBookService {
 		if (userInfo != null) {
 			String userRole = userInfo.getRole();
 			System.out.println("actual Role is " + userRole);
-			log.info("Actual ");
-			String fetchRole = userRole;
+				String fetchRole = userRole;
 
 			if (fetchRole.equals("seller") ) {
 				Book info = repository.fetchbyId(bookId);
@@ -340,7 +333,6 @@ public class BookServiceImplementation implements IBookService {
 
 		id = (long) generate.parseJWT(token);
 		Users userInfo = userRepository.getUserById(id);
-		log.info("");
 		if (userInfo != null) {
 			Book info = repository.fetchbyId(bookId);
 			if (info != null) {
